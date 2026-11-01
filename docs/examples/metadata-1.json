@@ -1,0 +1,9 @@
+{
+  "name": "Amphore de démonstration",
+  "description": "Provenance déclarée ; authenticité physique non garantie",
+  "image": "ipfs://REMPLACER_PAR_UN_CID_REEL",
+  "attributes": [
+    { "trait_type": "Origin", "value": "Greece (declared)" },
+    { "trait_type": "Period", "value": "Classical (declared)" }
+  ]
+}
