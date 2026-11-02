@@ -61,6 +61,6 @@ Le formulaire calcule Keccak-256 sur les octets d'un fichier choisi. Il n'envoie
 
 ## Répartition et interface
 
-Voir [l'architecture](docs/architecture.md) et [l'API du Registry](docs/registry-api.md). Le module Transactions doit lire `ownerOf(tokenId)`, obtenir une approbation ERC-721 avant le transfert et utiliser les événements `Transfer` du Registry pour l'historique complet.
+Voir [l'architecture](docs/architecture.md), [l'API du Registry](docs/registry-api.md) et les [repères de développement](docs/developpement.md). Le module Transactions doit lire `ownerOf(tokenId)`, obtenir une approbation ERC-721 avant le transfert et utiliser les événements `Transfer` du Registry pour l'historique complet.
 
 Une attestation indique qu'un wallet autorisé a déclaré avoir examiné le dossier. Le prototype ne prouve pas l'authenticité physique, la propriété juridique ou la qualification réelle de l'expert. Ne publiez pas de données personnelles sensibles dans les URI ou transactions.
