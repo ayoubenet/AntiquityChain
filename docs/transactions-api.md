@@ -48,4 +48,4 @@ L'ABI est copiée dans `frontend/src/generated/transactionsAbi.json` par `fronte
 
 ## Tests
 
-`blockchain/test/Transactions.test.ts` couvre les scénarios TX-01 à TX-22 du guide (motifs de refus vérifiés avec `viem.assertions`), plus l'acceptation de `setApprovalForAll`. Les destinataires contrats de TX-21/22 sont les mocks de `blockchain/contracts/test/ReceiverMocks.sol`. `blockchain/test/Integration.test.ts` déploie le module Ignition `AntiquitySystem` et rejoue le scénario commun : enregistrement, attestation, transfert, vente déclarée, preuve et transfert direct.
+`blockchain/test/unit/Transactions.test.ts` couvre les scénarios TX-01 à TX-22 du guide (motifs de refus vérifiés avec `viem.assertions`), plus l'acceptation de `setApprovalForAll`. Les destinataires contrats de TX-21/22 sont les mocks de `blockchain/test/mocks/ReceiverMocks.sol`. `blockchain/test/integration/AntiquitySystem.test.ts` déploie le module Ignition `AntiquitySystem` et rejoue le scénario commun : enregistrement, attestation, transfert, vente déclarée, preuve et transfert direct.

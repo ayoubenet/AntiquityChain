@@ -33,11 +33,6 @@ export async function hasRole(contract, roleName, account) {
   return contract.hasRole(role, account)
 }
 
-export async function hashEvidence(file) {
-  if (!file) throw new Error('Choisissez le fichier de preuve à hacher.')
-  return ethers.keccak256(new Uint8Array(await file.arrayBuffer()))
-}
-
 export async function registerAntique(contract, fields, evidenceHash) {
   const tx = await contract.registerAntique(
     fields.initialOwner, fields.name.trim(), fields.origin.trim(), fields.period.trim(),

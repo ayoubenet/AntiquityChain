@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { network } from "hardhat";
 import { getAddress, keccak256, parseEther, toBytes, zeroAddress } from "viem";
-import AntiquitySystem from "../ignition/modules/AntiquitySystem.js";
+import AntiquitySystem from "../../ignition/modules/AntiquitySystem.js";
 
 describe("AntiquitySystem end-to-end", async () => {
   const { ignition, viem } = await network.create();

@@ -4,35 +4,15 @@ import { configVariable, defineConfig } from "hardhat/config";
 export default defineConfig({
   plugins: [hardhatToolboxViemPlugin],
   solidity: {
-    profiles: {
-      default: {
-        version: "0.8.34",
-        settings: {
-          viaIR: true,
-          optimizer: { enabled: true, runs: 200 },
-        },
-      },
-      production: {
-        version: "0.8.34",
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 200,
-          },
-          viaIR: true,
-        },
-      },
+    version: "0.8.34",
+    settings: {
+      // viaIR avoids "stack too deep" in the seven-parameter registerAntique.
+      viaIR: true,
+      optimizer: { enabled: true, runs: 200 },
     },
   },
   networks: {
-    hardhatMainnet: {
-      type: "edr-simulated",
-      chainType: "l1",
-    },
-    hardhatOp: {
-      type: "edr-simulated",
-      chainType: "op",
-    },
+    // `localhost` (npx hardhat node) is built in. Sepolia is the public testnet target.
     sepolia: {
       type: "http",
       chainType: "l1",

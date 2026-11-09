@@ -7,8 +7,8 @@ const { viem } = await network.create({ network: "localhost" });
 const publicClient = await viem.getPublicClient();
 const [admin, registrar, expert, owner] = await viem.getWalletClients();
 const deployments = JSON.parse(await readFile("ignition/deployments/chain-31337/deployed_addresses.json", "utf8"));
-const address = deployments["AntiquitySystem#AntiquityRegistry"] ?? deployments["RegistryModule#AntiquityRegistry"];
-if (!address) throw new Error("Deploy AntiquitySystem (or RegistryModule) first");
+const address = deployments["AntiquitySystem#AntiquityRegistry"];
+if (!address) throw new Error("Deploy AntiquitySystem first");
 
 const registry = await viem.getContractAt("AntiquityRegistry", address);
 const byRegistrar = await viem.getContractAt("AntiquityRegistry", address, { client: { wallet: registrar } });

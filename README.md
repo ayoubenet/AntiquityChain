@@ -36,7 +36,7 @@ npx hardhat run scripts/demo.ts --network localhost
 npx hardhat run scripts/demo-transactions.ts --network localhost
 ```
 
-Le module `AntiquitySystem` déploie le Registry puis Transactions avec l'adresse du Registry (`Registry.ts` reste disponible pour déployer le Registry seul). Le premier script de démonstration donne le rôle registraire au compte local 1, le rôle expert au compte 2, crée deux objets au compte 3 et atteste le premier. Il affiche les adresses, IDs et le hash Keccak-256 du fichier `docs/examples/evidence-1.txt`. Le second transfère le token 1 du compte 3 au compte 4 via Transactions, enregistre une vente déclarée vers le compte 5 et ajoute une preuve de provenance. Détails et adresses : [déploiement local](docs/deployment-local.md). Les URI `ipfs://REMPLACER_PAR_UN_CID_REEL` dans cette démonstration sont des placeholders : aucun fichier n'est téléversé vers IPFS.
+Le module `AntiquitySystem` déploie le Registry puis Transactions avec l'adresse du Registry. Le premier script de démonstration donne le rôle registraire au compte local 1, le rôle expert au compte 2, crée deux objets au compte 3 et atteste le premier. Il affiche les adresses, IDs et le hash Keccak-256 du fichier `docs/examples/evidence-1.txt`. Le second transfère le token 1 du compte 3 au compte 4 via Transactions, enregistre une vente déclarée vers le compte 5 et ajoute une preuve de provenance. Détails et adresses : [déploiement local](docs/deployment-local.md). Les URI `ipfs://REMPLACER_PAR_UN_CID_REEL` dans cette démonstration sont des placeholders : aucun fichier n'est téléversé vers IPFS.
 
 Si le nœud local a été redémarré, redéployer avec `npx hardhat ignition deploy ignition/modules/AntiquitySystem.ts --network localhost --reset`, puis relancer le script de démonstration. Le stockage et les comptes du nœud sont éphémères.
 
@@ -53,8 +53,6 @@ Renseigner `VITE_REGISTRY_ADDRESS` et `VITE_TRANSACTIONS_ADDRESS` dans `.env.loc
 ```powershell
 npm run dev
 ```
-
-Pour vérifier la lecture du token de démonstration avec ethers.js depuis le même environnement que le frontend : `node scripts/check-local.mjs` (nœud et script de démonstration actifs).
 
 Ouvrir `http://localhost:5173`. Configurer le wallet sur le RPC `http://127.0.0.1:8545`, chain ID `31337`, et importer **uniquement un compte local de développement** affiché par `hardhat node`. Le frontend copie automatiquement les ABI des deux contrats compilés. La lecture d'une fiche fonctionne sans connexion wallet tant que le nœud local répond ; l'enregistrement et l'attestation exigent une signature et le rôle correspondant.
 

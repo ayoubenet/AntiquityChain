@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { connectWallet, hasRole, hashEvidence, registerAntique } from '../services/registry'
+import { connectWallet, hasRole, registerAntique } from '../services/registry'
+import { hashFile } from '../services/transactions'
 
 const initial = { initialOwner: '', name: '', origin: '', period: '', metadataURI: '', provenanceURI: '' }
 
@@ -21,7 +22,7 @@ export default function RegisterAntique({ account, onConnected }) {
       if (!await hasRole(wallet.contract, 'REGISTRAR_ROLE', wallet.account)) {
         throw new Error('Ce wallet ne possède pas le rôle de registraire.')
       }
-      const evidenceHash = await hashEvidence(file)
+      const evidenceHash = await hashFile(file)
       setMessage('Signature et confirmation de la transaction en attente…')
       const created = await registerAntique(wallet.contract, fields, evidenceHash)
       setResult({ ...created, evidenceHash })

@@ -13,7 +13,7 @@ Contrat : `AntiquityRegistry` · Solidity `0.8.34` · OpenZeppelin `5.6.1` · r�
 
 L'ABI est générée dans `blockchain/artifacts/contracts/AntiquityRegistry.sol/AntiquityRegistry.json` après compilation. Le frontend copie sa propriété `abi` dans `frontend/src/generated/registryAbi.json` à chaque démarrage ou build.
 
-Après le déploiement local, l'adresse réelle est enregistrée dans `blockchain/ignition/deployments/chain-31337/deployed_addresses.json`, sous la clé `RegistryModule#AntiquityRegistry`. Elle doit être copiée dans `frontend/.env.local` comme `VITE_REGISTRY_ADDRESS`. Ce fichier est ignoré par Git, car l'adresse d'un nœud local ne doit pas être considérée comme permanente.
+Après le déploiement local, l'adresse réelle est enregistrée dans `blockchain/ignition/deployments/chain-31337/deployed_addresses.json`, sous la clé `AntiquitySystem#AntiquityRegistry`. Elle doit être copiée dans `frontend/.env.local` comme `VITE_REGISTRY_ADDRESS`. Ce fichier est ignoré par Git, car l'adresse d'un nœud local ne doit pas être considérée comme permanente.
 
 Déploiement vérifié le 1er novembre 2026 sur le nœud local de démonstration : `0x5FbDB2315678afecb367f032d93F642f64180aa3`, chain ID `31337`. Deux tokens ont été créés (IDs 1 et 2), et le token 1 a reçu une attestation. Cette adresse doit être revérifiée si le nœud redémarre.
 
